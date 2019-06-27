@@ -39,23 +39,33 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 const logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 const headerImage = document.getElementById("cta-img");
-headerImage.setAttribute('src', siteContent["cta"]["img-src"])
+headerImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
 const banner = document.getElementById('middle-img');
-banner.setAttribute('src', siteContent['main-content']['middle-img-src'])
+banner.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-const navBar = document.querySelectorAll('a');
+// const navBar = document.querySelectorAll('a');
 
-navBar[0].innerText = siteContent.nav["nav-item-1"];
-navBar[0].innerText = siteContent.nav["nav-item-1"];
-navBar[1].innerText = siteContent.nav["nav-item-1"];
-navBar[2].innerText = siteContent.nav["nav-item-1"];
-navBar[3].innerText = siteContent.nav["nav-item-1"];
-navBar[4].innerText = siteContent.nav["nav-item-1"];
-navBar[5].innerText = siteContent.nav["nav-item-1"];
+// navBar[0].innerText = siteContent.nav["nav-item-1"];
+// navBar[0].innerText = siteContent.nav["nav-item-1"];
+// navBar[1].innerText = siteContent.nav["nav-item-1"];
+// navBar[2].innerText = siteContent.nav["nav-item-1"];
+// navBar[3].innerText = siteContent.nav["nav-item-1"];
+// navBar[4].innerText = siteContent.nav["nav-item-1"];
+// navBar[5].innerText = siteContent.nav["nav-item-1"];
+
+let navBar = document.querySelectorAll("nav a");
+console.log(navBar);
+navBar.forEach((tag, index) => {
+  i = index + 1;
+  tag.textContent = siteContent["nav"][`nav-item-${i}`];
+});
+
+navBar.forEach(currentValue => (currentValue.style.fontSize = "120%"));
+
 
 const header01 = document.querySelector('h1');
 header01.innerText = siteContent.cta.h1;
